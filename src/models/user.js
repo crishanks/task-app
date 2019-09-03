@@ -49,6 +49,12 @@ const userSchema = new mongoose.Schema({
   }]
 })
 
+userSchema.virtual('tasks', {
+  ref: 'Task',
+  localField: '_id',
+  foreignField: 'owner'
+})
+
 // Authentication
 userSchema.methods.generateAuthToken = async function() {
   const user = this
