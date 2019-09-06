@@ -76,7 +76,7 @@ test('Should not get profile for unauthenticated user', async () => {
 })
 
 test('Should delete account for user', async () => {
-    const response = await request(app)
+    await request(app)
         .delete('/users/me')
         .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
         .send()
