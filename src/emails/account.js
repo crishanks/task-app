@@ -12,6 +12,7 @@ const sendWelcomeEmail = (email, name) => {
 }
 
 const sendGoodbyeEmail = (email, name) => {
+  console.log('sending goodbye')
   sgMail.send({
     to: email,
     from: 'crishanks12@gmail.com',
